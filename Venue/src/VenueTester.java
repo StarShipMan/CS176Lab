@@ -22,14 +22,14 @@ public class VenueTester {
 		seats = sc.nextInt();
 		Venue PrudentialCenter = new Venue(sections, rows, seats);
 		System.out.println();
-		System.out.println("Which section would you like to be awarded?");
-		awardedSection = sc.nextInt();
-		System.out.println("Which row for the section would you like to be awarded?");
-		awardedRow = sc.nextInt();
-		System.out.println("Which seat for the row would you like to be awarded?");
-		awardedSeat = sc.nextInt();
-		awarded = PrudentialCenter.seatLookup(awardedSection, awardedRow, awardedSeat);
-		System.out.println(awardedSection + "-" + awardedRow + "-" + awardedSeat + "" + awarded);
+		//System.out.println("Which section would you like to be awarded?");
+		//awardedSection = sc.nextInt();
+		//System.out.println("Which row for the section would you like to be awarded?");
+		//awardedRow = sc.nextInt();
+		//System.out.println("Which seat for the row would you like to be awarded?");
+		//awardedSeat = sc.nextInt();
+		PrudentialCenter.seatLookup(sections, rows, seats);
+		//System.out.println(awardedSection + "-" + awardedRow + "-" + awardedSeat + "" + awarded);
 		
 		
 	}//main
