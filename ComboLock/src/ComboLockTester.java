@@ -16,27 +16,15 @@ public class ComboLockTester {
 		System.out.println("Enter number of ticks to turn to the right 0-39. Enter an invalid number to quit.");
 		stringTicks = sc.next();
 		while (isDone == false) {
-			if (!(((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0))) {
-				System.out.println("Thank you, have a good day!");
-				isDone = true;
-			} else if (((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0)) {
-				ticks = Integer.parseInt(stringTicks);
-				lock.turnRight(ticks);
-			}
-			if (isDone == false) {
-				System.out.println("Enter number of ticks to turn to the left 0-39. Enter an invalid number to quit.");
-				stringTicks = sc.next();
-				if (!(((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0))) {
-					System.out.println("Thank you, have a good day!");
+			for (int i = 0; i < stringTicks.length(); i++) {
+				if (!Character.isDigit(stringTicks.charAt(i))) {
 					isDone = true;
-				} else if (((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0)) {
-					ticks = Integer.parseInt(stringTicks);
-					lock.turnLeft(ticks);
 				}
 			}
+			if (isDone == true) {
+				System.out.println("Thank you, have a good day!");
+			}
 			if (isDone == false) {
-				System.out.println("Enter number of ticks to turn to the right 0-39. Enter an invalid number to quit.");
-				stringTicks = sc.next();
 				if (!(((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0))) {
 					System.out.println("Thank you, have a good day!");
 					isDone = true;
@@ -44,46 +32,57 @@ public class ComboLockTester {
 					ticks = Integer.parseInt(stringTicks);
 					lock.turnRight(ticks);
 				}
-			}
-			if (isDone == false) {
-				if (lock.open()) {
-					System.out.println("You opened the lock!");
-					isDone = true;
+				if (isDone == false) {
+					System.out.println(
+							"Enter number of ticks to turn to the left 0-39. Enter an invalid number to quit.");
+					stringTicks = sc.next();
+					if (!(((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0))) {
+						System.out.println("Thank you, have a good day!");
+						isDone = true;
+					} else if (((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0)) {
+						ticks = Integer.parseInt(stringTicks);
+						lock.turnLeft(ticks);
+					}
 				}
-				else {
-					System.out.println("You did not open the lock!");
-					isDone = true;
+				if (isDone == false) {
+					System.out.println(
+							"Enter number of ticks to turn to the right 0-39. Enter an invalid number to quit.");
+					stringTicks = sc.next();
+					if (!(((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0))) {
+						System.out.println("Thank you, have a good day!");
+						isDone = true;
+					} else if (((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0)) {
+						ticks = Integer.parseInt(stringTicks);
+						lock.turnRight(ticks);
+					}
+				}
+				if (isDone == false) {
+					if (lock.open()) {
+						System.out.println("You opened the lock!");
+						isDone = true;
+					} else {
+						System.out.println("You did not open the lock!");
+						isDone = true;
+					}
 				}
 			}
-		}//while loop for first attempt
+		} // while loop for first attempt
 		isDone = false;
 		System.out.println();
 		lock.reset();
 		System.out.println("Second Attempt");
+		System.out.println("Enter number of ticks to turn to the right 0-39. Enter an invalid number to quit.");
+		stringTicks = sc.next();
 		while (isDone == false) {
-			System.out.println("Enter number of ticks to turn to the right 0-39. Enter an invalid number to quit.");
-			stringTicks = sc.next();
-			if (!(((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0))) {
-				System.out.println("Thank you, have a good day!");
-				isDone = true;
-			} else if (((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0)) {
-				ticks = Integer.parseInt(stringTicks);
-				lock.turnRight(ticks);
-			}
-			if (isDone == false) {
-				System.out.println("Enter number of ticks to turn to the left 0-39. Enter an invalid number to quit.");
-				stringTicks = sc.next();
-				if (!(((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0))) {
-					System.out.println("Thank you, have a good day!");
+			for (int i = 0; i < stringTicks.length(); i++) {
+				if (!Character.isDigit(stringTicks.charAt(i))) {
 					isDone = true;
-				} else if (((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0)) {
-					ticks = Integer.parseInt(stringTicks);
-					lock.turnLeft(ticks);
 				}
 			}
+			if (isDone == true) {
+				System.out.println("Thank you, have a good day!");
+			}
 			if (isDone == false) {
-				System.out.println("Enter number of ticks to turn to the right 0-39. Enter an invalid number to quit.");
-				stringTicks = sc.next();
 				if (!(((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0))) {
 					System.out.println("Thank you, have a good day!");
 					isDone = true;
@@ -91,19 +90,42 @@ public class ComboLockTester {
 					ticks = Integer.parseInt(stringTicks);
 					lock.turnRight(ticks);
 				}
-			}
-			if (isDone == false) {
-				if (lock.open()) {
-					System.out.println("You opened the lock!");
-					isDone = true;
+				if (isDone == false) {
+					System.out.println(
+							"Enter number of ticks to turn to the left 0-39. Enter an invalid number to quit.");
+					stringTicks = sc.next();
+					if (!(((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0))) {
+						System.out.println("Thank you, have a good day!");
+						isDone = true;
+					} else if (((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0)) {
+						ticks = Integer.parseInt(stringTicks);
+						lock.turnLeft(ticks);
+					}
 				}
-				else {
-					System.out.println("You did not open the lock!");
-					isDone = true;
+				if (isDone == false) {
+					System.out.println(
+							"Enter number of ticks to turn to the right 0-39. Enter an invalid number to quit.");
+					stringTicks = sc.next();
+					if (!(((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0))) {
+						System.out.println("Thank you, have a good day!");
+						isDone = true;
+					} else if (((Integer.parseInt(stringTicks)) < 40) && ((Integer.parseInt(stringTicks)) > 0)) {
+						ticks = Integer.parseInt(stringTicks);
+						lock.turnRight(ticks);
+					}
+				}
+				if (isDone == false) {
+					if (lock.open()) {
+						System.out.println("You opened the lock!");
+						isDone = true;
+					} else {
+						System.out.println("You did not open the lock!");
+						isDone = true;
+					}
 				}
 			}
-		}//while loop for second attempt
-		
+		} // while loop for second attempt
+
 	}// main
 
 }// class
